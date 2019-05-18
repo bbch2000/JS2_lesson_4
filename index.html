@@ -5,6 +5,44 @@
     <title>Lesson_4</title>
 </head>
 <body>
-    
+    <div id="starttext"><p>One:В 'Hi Mary.' Two:В 'Oh, hi.'<br>
+One:В 'How are you doing?'<br>
+Two:В 'I'm doing alright. How about you?'<br>
+ One:В 'Not too bad. The weather is great isn't it?'<br>
+ Two:В 'Yes. It's absolutely beautiful today.'<br>
+One:В 'I wish it was like this more frequently.'<br>
+Two:В 'Me too.'<br>
+One:В 'So where are you going now?'<br>
+Two:В 'I'm going to meet a friend of mine at the department store.'<br>
+One:В 'Going to do a little shopping?'<br>
+Two:В 'Yeah, I have to buy some presents for my parents.'<br>
+One:В 'What's the occasion?'<br>
+ Two:В 'It's their anniversary.'<br>
+One:В 'That's great. Well, you better get going. You don't want to be late.'<br>
+Two:В 'I'll see you next time.'<br>
+One:В 'Sure. Bye.'</p></div>
+   <div id="newtext">
+       
+   </div>
+    <button id='remake'>Переделать!</button>
+    <script>
+        function remake () {
+            let text = document.querySelector('#starttext').innerHTML;
+            console.log(text);
+            let regexp = /\s'/g;
+            let regexp2 = /'</g;
+            let regexp3 = /'\s/g;
+            var newtext = text.replace(regexp, ' "');
+            newtext = newtext.replace(regexp2, '"<');
+            newtext = newtext.replace(regexp3, '" ');
+            console.log(newtext);
+            document.querySelector('#newtext').innerHTML = newtext;
+        };
+        document.addEventListener('click', () => {
+            if (event.target.id == 'remake') {
+                remake();
+            }
+        })
+    </script>
 </body>
 </html>
